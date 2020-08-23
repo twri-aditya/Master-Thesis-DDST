@@ -26,8 +26,8 @@ p {
 		</div>
 
 			<div id="Deviation_div">
-				<div class = "justify-content-center">
-					<div class="row">
+				<div class = "justify-content-center" style="margin-left:275px">
+					<div class="row" >
 					  
 					  <div class="col-sm-4">
 						<button  type="button" id="startClock" class="btn btn-success btn-lg  btn-block text-center center-block" onclick="myFunctionClick()">Organizational</button>
@@ -38,10 +38,10 @@ p {
 					  </div> 
 					</div>
 					<div class="row">
-					 <div class="col-sm-4">
-						<button type="button" class="btn btn-light btn-lg btn-block  text-center center-block">Quality Loss</button>
+					 <div class="col-sm-4" style="margin-top:20px">
+						<button type="button" class="btn btn-info btn-lg btn-block  text-center center-block">Quality Loss</button>
 					  </div>
-					  <div class="col-sm-4">
+					  <div class="col-sm-4" style="margin-top:20px">
 						<button type="button" class="btn btn-primary btn-lg btn-block text-center center-block">Performance Loss</button>
 					  </div>
 					</div>
@@ -120,21 +120,23 @@ p {
                 </div>
                 <div class="row center-block">
                     <div class="col-sm-4">
-                        <button type="button" onclick="SupportMessage_technical()" class="btn btn-Light btn-lg text-center center-block">Level-1 Immediate Assistance</button>
+                        <button type="button" onclick="SupportMessage_technical()" class="btn btn-info btn-lg text-center center-block">Level-1 Immediate Assistance</button>
                     </div>
                     <div class="col-sm-4">
                         <button type="button" onclick="MeterialRequested_techincal()" class="btn btn-warning btn-lg text-center center-block">Level-2 Immediate Assistance</button>
                     </div>
                     <div class="col-sm-4">
-                        <button type="button" onclick="level3_techincal()" class="btn btn-i btn-lg  text-center center-block">Level-3 Immediate Assistance</button>
-                    </div>
-                    <div class="col-sm-4 text-center center-block">
-
-                        <a href="Technical_table.html">
-                            <button type="button" class="btn btn-Success btn-lg text-center" onclick="">Resolved</button>
-                        </a>
+                        <button type="button" onclick="level3_techincal()" class="btn btn-i btn-lg btn-primary text-center center-block">Level-3 Immediate Assistance</button>
                     </div>
                 </div>
+                    <div class="row center-block" style="margin-left: 500px; margin-top:20px">
+                        <div class="col-sm-4">
+                            <a href="Technical_table.html">
+                                <button type="button" class="btn btn-Success btn-lg" onclick="">Resolved</button>
+                            </a>
+                        </div>
+                        </div>
+                   
             </div>
         </div>
 </div>
@@ -203,7 +205,7 @@ function startTimer(){
     counter--;
     if (counter >= 0) {
       span = document.getElementById("countDown");
-      span.innerHTML = counter;
+      span.innerHTML = "Time Remaining: " + counter;
     }
     if (counter === 0) {
         clearInterval(counter);

@@ -18,108 +18,287 @@ p {
 </head>
 <body onpageshow="myFunction()">
 
-	<div class="container">
-		 <div class="row justify-content-center page-header">
-			<h1 class="text-center">Technical</h1> 
-		 </div>
-		
-		
-	<div style="margin-top: 50px;">	
-		<table style="width:100%" id="tblData">
-		  <tr>
-			<th>Time</th>
-			<th>Part Number</th>
-			<th>Target/Actual</th>
-			<th>NOK Parts</th>
-			<th>minutes lost</th>
-			<th>Reason for Deviation</th>
-			<th>Action Taken</th>
-			<th>AOD ID</th>
-		  </tr>
-		  <tr>
-			<td>01:00:00</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td id= "texting"></td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-		  </tr>
-		  <tr>
-			<td>02:00:00</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-		  </tr>
-		  <tr>
-			<td>03:00:00</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-		  </tr>
-		  <tr>
-			<td>04:00:00</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-		  </tr>
-		  <tr>
-			<td>05:00:00</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-		  </tr>
-		  <tr>
-			<td>06:00:00</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-		  </tr>
-		  <tr>
-			<td>07:00:00</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-		  </tr>
-		  <tr>
-			<td>08:00:00</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-			<td>time</td>
-		  </tr>
-		</table>
-	</div>
-	<button onclick="exportTableToExcel('tblData')">Export Table Data To Excel File</button>
-		
+    <div class="container">
+        <div class="row justify-content-center page-header">
+            <h1 class="text-center">Technical</h1>
+        </div>
+
+        <div class="row justify-content-center page-header">
+            <h2 class="text-center">Hourly Performance Tracking</h2>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <table style="width:100%" id="tblData">
+                <tr>
+                    <th>Time</th>
+                    <th>Part Number</th>
+                    <th>Target/Actual</th>
+                    <th>NOK Parts</th>
+                    <th>minutes lost</th>
+                    <th>Reason for Deviation</th>
+                    <th>Action Taken</th>
+                    <th>AOD ID</th>
+                    <th>PC Clock Time</th>
+                </tr>
+                <tr>
+                    <td>01:00:00</td>
+                    <td>348796</td>
+                    <td>400/203</td>
+                    <td>16</td>
+                    <td>00:00:40</td>
+                    <td>Defective Material</td>
+                    <td>Material replaced</td>
+                    <td>N/A</td>
+                    <td>01:23:42</td>
+                </tr>
+                <tr>
+                    <td>02:00:00</td>
+                    <td>348796</td>
+                    <td>400/260</td>
+                    <td>17</td>
+                    <td id="data_1" style="color: red"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>02:24:52</td>
+                </tr>
+                <tr>
+                    <td>03:00:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>04:00:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>05:00:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>06:00:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>07:00:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>08:00:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <button onclick="exportTableToExcel('tblData')"  class="btn btn-primary">Export Table Data To Excel File</button>
+
+        <div class="row justify-content-center page-header">
+            <h2 class="text-center">Machine Utilization Sheet</h2>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <table style="width:100%" id="tb2Data">
+                <tr>
+                    <th>Shift</th>
+                    <th>Part Number</th>
+                    <th>Good parts (FPY) / Total Production (in pieces)</th>
+                    <th>Standard time (Min./100)</th>
+                    <th>Shift Filter</th>
+                    <th>Operator Max</th>
+                    <th>Operators actual</th>
+                    <th>Technical malfunction and repair</th>
+                    <th>Machine Adjustment</th>
+                    <th>Setup</th>
+                    <th>Start-up, startup, testing</th>
+                    <th>Defective material</th>
+                    <th>Lack of material</th>
+                    <th>Lack of personnel</th>
+                    <th>Break, change of shifts</th>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>348796</td>
+                    <td>203/219</td>
+                    <td>00:05:00</td>
+                    <td>01:23:42 - 01:24:22</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>00:00:40</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>348796</td>
+                    <td>260/277</td>
+                    <td>00:05:00</td>
+                    <td></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td id="data_2" style="color: red"></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+
+                    <td> </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>06</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>07</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>08</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <button onclick="exportTableToExcel('tb2Data')"  class="btn btn-primary">Export Table Data To Excel File</button>
+
+
+    </div>
 	</div>
 </body>
 
@@ -136,7 +315,9 @@ p {
       }
 	  function myFunction() {
           var name = window.localStorage.getItem('timerdata_technical');
-  document.getElementById("texting").innerHTML = name;
+          document.getElementById("data_1").innerHTML = name;
+          document.getElementById("data_2").innerHTML = name;
+
 }
 
 function exportTableToExcel(tableID, filename = ''){
