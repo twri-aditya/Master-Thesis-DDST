@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,9 +34,7 @@ p {
 					  </div>
 					  
 					  <div class="col-sm-4">
-						<a href = "Technical.html">
-						<button type="button" class="btn btn-warning btn-lg  btn-block text-center center-block">Technical</button>
-					  </a>
+						<button type="button" class="btn btn-warning btn-lg  btn-block text-center center-block" onclick="myFunctionClick_Technical()">Technical</button>
 					  </div> 
 					</div>
 					<div class="row">
@@ -112,7 +110,33 @@ p {
 				   </div>				   
 			   </div>
 			</div>
+        <div id="Technical_div" style="display: none;">
+            <div class="container">
+                <div class="row justify-content-center page-header">
+                    <h1 class="text-center">Technical</h1>
+                </div>
+                <div class="row justify-content-center page-header">
+                    <p id="countDown_tech"></p>
+                </div>
+                <div class="row center-block">
+                    <div class="col-sm-4">
+                        <button type="button" onclick="SupportMessage_technical()" class="btn btn-Light btn-lg text-center center-block">Level-1 Immediate Assistance</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" onclick="MeterialRequested_techincal()" class="btn btn-warning btn-lg text-center center-block">Level-2 Immediate Assistance</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" onclick="level3_techincal()" class="btn btn-i btn-lg  text-center center-block">Level-3 Immediate Assistance</button>
+                    </div>
+                    <div class="col-sm-4 text-center center-block">
 
+                        <a href="Technical_table.html">
+                            <button type="button" class="btn btn-Success btn-lg text-center" onclick="">Resolved</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 </body>
 
@@ -147,8 +171,22 @@ function myFunctionClick() {
     x.style.display = "block";
 
 	setInterval();
-}
+    }
+    var cleartime = 0;
 
+
+    function myFunctionClick_Technical() {
+        var x = document.getElementById("Deviation_div");
+        x.style.display = "none";
+        var x = document.getElementById("Technical_div");
+        x.style.display = "block";
+        var cleartime = setInterval(function () { startTimer_techincal() }, 1000);
+        timeIntervalUp = cleartime;
+        startTimer_techincal();
+        setInterval();
+
+    }
+    
 function SupportMessage() {
   alert("Emergency support is on his way");
 }
@@ -178,7 +216,73 @@ $("#startClock").click(function(){
  });
 
  function ORG_timer_data() {
-  window.localStorage.setItem('timerdata', h2.textContent);
-}
+     window.localStorage.setItem('timerdata', h2.textContent);
+     window.localStorage.setItem('timerdata_technical', h2.textContent);
+    }
+
+    var secondsDown = 20;
+    
+
+    function SupportMessage_technical() {
+        alert("Level 1 assistance informed");
+        document.getElementById("countDown_tech").innerHTML = "Time Remaining: " + secondsDown;
+        secondsDown = 16;
+        secondsDown--;
+
+        if (secondsDown == 8) {
+            alert("")
+        }
+
+        if (secondsDown == 3) {
+            alert("")
+        }
+
+        if (secondsDown == -2) {
+            clearInterval(timeIntervalUp);
+            endTimer();
+            alert("")
+        }
+    }
+
+    function MeterialRequested_techincal() {
+        alert("Level 2 assistance informed");
+    }
+
+    function level3_techincal() {
+        alert("Level 3 assistance informed");
+    }
+
+   
+
+    function startTimer_techincal() {
+        document.getElementById("countDown_tech").innerHTML = "Time Remaining: " + secondsDown;
+        secondsDown--;
+
+        if (secondsDown == 13) {
+            alert("Level 1 assistance informed")
+        }
+
+        if (secondsDown == 8) {
+            alert("Level 2 assistance informed")
+        }
+
+        if (secondsDown == 3) {
+            alert("Level 3 assistance informed")
+        }
+
+        if (secondsDown == -2) {
+            clearInterval(timeIntervalUp);
+            endTimer();
+            alert("Level 4 assistance informed")
+        }
+    }
+
+    function endTimer() {
+        document.getElementById("countDown_tech").innerHTML = "Time ran out";
+    }
+
+    function reload() {
+        window.location = "";
+    }
 </script>
 </html>
