@@ -1,0 +1,341 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+table, th, td {
+  border: 1px solid black;
+}
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body onpageshow="myFunction()">
+
+	<div class="container">
+		 <div class="row justify-content-center page-header">
+			<h1 class="text-center">Organizaitonal</h1> 
+		</div>
+		 <div class="row justify-content-center page-header">
+			<h2 class="text-center">Hourly Performance Tracking</h2> 
+		</div>
+	<div style="margin-top: 50px;">	
+		<table style="width:100%" id="tblData">
+		  <tr>
+			<th>Time</th>
+			<th>Part Number</th>
+			<th>Target/Actual</th>
+			<th>NOK Parts</th>
+			<th>minutes lost</th>
+			<th>Reason for Deviation</th>
+			<th>Action Taken</th>
+			<th>AOD ID</th>
+		  </tr>
+		  <tr>
+			<td>01:00:00</td>
+			<td>	</td>
+			<td></td>
+			<td></td>
+			<td id= "daata"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>02:00:00</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>03:00:00</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>04:00:00</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>05:00:00</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>06:00:00</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>07:00:00</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>08:00:00</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		</table>
+	</div>
+	<button onclick="exportTableToExcel('tblData')">Export Table Data To Excel File</button>
+		
+		 <div class="row justify-content-center page-header">
+			<h2 class="text-center">Machine Utilization Sheet</h2> 
+		</div>
+
+		<div style="margin-top: 50px;">	
+		<table style="width:100%" id="tb2Data">
+		  <tr>
+			<th>Shift</th>
+			<th>Part Number</th>
+			<th>Good parts (FPY) / Total Production (in pieces)</th>
+			<th>Standard time (Min./100)</th>
+			<th>Start / End of Manufacturing (hh:mm)</th>
+			<th>Operator Max</th>
+			<th>Operators actual</th>
+			<th>Technical malfunction and repair</th>
+			<th>Machine Adjustment</th>
+			<th>Setup</th>
+			<th>Start-up, startup, testing</th>
+			<th>Defective material</th>
+			<th>Lack of material</th>
+			<th>Lack of personnel</th>
+			<th>Break, change of shifts</th>
+		  </tr>
+		  <tr>
+			<td>01</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td id= "daatas"></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>02</td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>03</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>04</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>05</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>06</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>07</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		  <tr>
+			<td>08</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		</table>
+	</div>
+	
+	<button onclick="exportTableToExcel('tb2Data')">Export Table Data To Excel File</button>
+		
+		
+	</div>
+</body>
+
+<script type="text/javascript">
+       function startXL(strFile)
+      {      
+            var myApp = new ActiveXObject("Excel.Application");
+            if (myApp != null)
+            {
+                  myApp.visible = true;
+                  myApp.workbooks.open("sheet1.xlsx");
+            }
+            return false
+      }
+	  function myFunction() {
+  var timerdata = window.localStorage.getItem('timerdata');
+  document.getElementById("daata").innerHTML = timerdata;
+  document.getElementById("daatas").innerHTML = timerdata;
+}
+
+function exportTableToExcel(tableID, filename = ''){
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(tableID);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    
+    // Specify file name
+    filename = filename?filename+'.xls':'DTS.xls';
+    
+    // Create download link element
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['\ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+    }
+	else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+}
+</script>
+</html>

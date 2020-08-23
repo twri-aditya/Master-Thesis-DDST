@@ -1,0 +1,184 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body onpagehide="ORG_timer_data()">
+
+	<div class="container">
+		<div class="row justify-content-center page-header">
+			<h1 class="text-center">Hella DDST</h1> 
+		</div>
+		<div class="row text-right page-header">
+			<h2><time>00:00:00</time></h2>
+		</div>
+
+			<div id="Deviation_div">
+				<div class = "justify-content-center">
+					<div class="row">
+					  
+					  <div class="col-sm-4">
+						<button  type="button" id="startClock" class="btn btn-success btn-lg  btn-block text-center center-block" onclick="myFunctionClick()">Organizational</button>
+					  </div>
+					  
+					  <div class="col-sm-4">
+						<a href = "Technical.html">
+						<button type="button" class="btn btn-warning btn-lg  btn-block text-center center-block">Technical</button>
+					  </a>
+					  </div> 
+					</div>
+					<div class="row">
+					 <div class="col-sm-4">
+						<button type="button" class="btn btn-light btn-lg btn-block  text-center center-block">Quality Loss</button>
+					  </div>
+					  <div class="col-sm-4">
+						<button type="button" class="btn btn-primary btn-lg btn-block text-center center-block">Performance Loss</button>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div id="Organizational_div" style="display: none;">
+				<div class="container">
+					<div class="row justify-content-center page-header">
+					   <h1 class="text-center">Organizational</h1> 
+					   
+				   </div>
+				   <div class="row justify-content-center page-header">
+					   <p id="countDown"></p>
+				   </div>
+				   <div class="row center-block">
+						 <div class="col-sm-4">
+						   <button type="button" onclick="SupportMessage()" class="btn btn-info btn-lg btn-block text-center center-block">Emergency Support</button>
+						 </div>
+						 <div class = "col-sm-4 center-block text-center">
+						 <div class="custom-control custom-radio ">
+							 <input type="radio" class="custom-control-input" id="defaultChecked" name="defaultExampleRadios" checked>
+							 <label class="custom-control-label" for="defaultChecked">Lack of Material</label>
+						 </div>
+						 </div>
+						 <div class="col-sm-4">
+						 <a href="Organizational_table.html">
+						   <button type="button" class="btn btn-success btn-lg btn-block text-center center-block" onclick="">Resolved</button>
+						 </a>
+						 </div>
+				   </div>
+				   
+				   <!-- Default unchecked disabled -->
+				   <div class="row center-block text-center">
+				   <div class="custom-control custom-radio">
+					 <input type="radio" class="custom-control-input " id="defaultUncheckedDisabled2" name="disabledGroupExample" disabled>
+					 <label class="custom-control-label " for="defaultUncheckedDisabled2">Setup</label>
+				   </div>
+				   </div>
+				   <!-- Default unchecked disabled -->
+				   <div class="row center-block text-center">
+				   <div class="custom-control custom-radio">
+					 <input type="radio" class="custom-control-input " id="defaultUncheckedDisabled2" name="disabledGroupExample" disabled>
+					 <label class="custom-control-label" for="defaultUncheckedDisabled2">Sample, Startup Testing</label>
+				   </div>
+				   </div>
+				   <!-- Default unchecked disabled -->
+				   <div class="row center-block text-center">
+				   <div class="custom-control custom-radio">
+					 <input type="radio" class="custom-control-input" id="defaultUncheckedDisabled2" name="disabledGroupExample" disabled>
+					 <label class="custom-control-label" for="defaultUncheckedDisabled2">Defective Material</label>
+				   </div>
+				   </div>
+				   <!-- Default unchecked disabled -->
+				   <div class="row center-block text-center">
+				   <div class="custom-control custom-radio">
+					 <input type="radio" class="custom-control-input" id="defaultUncheckedDisabled2" name="disabledGroupExample" disabled>
+					 <label class="custom-control-label" for="defaultUncheckedDisabled2">Lack of Personal</label>
+				   </div>
+				   </div>
+				   <!-- Default unchecked disabled -->
+				   <div class="row center-block text-center">
+				   <div class="custom-control custom-radio">
+					 <input type="radio" class="custom-control-input" id="defaultUncheckedDisabled2" name="disabledGroupExample" disabled>
+					 <label class="custom-control-label" for="defaultUncheckedDisabled2">Break Shift Change</label>
+				   </div>
+				   </div>				   
+			   </div>
+			</div>
+
+</div>
+</body>
+
+<script>
+var h2 = document.getElementsByTagName('h2')[0],
+    seconds = 0, minutes = 0, hours = 0,
+    t;
+
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+	
+    h2.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+timer();
+
+function myFunctionClick() {
+  var x = document.getElementById("Deviation_div");
+    x.style.display = "none";
+  var x = document.getElementById("Organizational_div");
+    x.style.display = "block";
+
+	setInterval();
+}
+
+function SupportMessage() {
+  alert("Emergency support is on his way");
+}
+function MeterialRequested() {
+  alert("SOS message 2");
+}
+function Resolved() {
+  alert("SOS message 3");
+}
+
+function startTimer(){
+  var counter = 10;
+  setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+      span = document.getElementById("countDown");
+      span.innerHTML = counter;
+    }
+    if (counter === 0) {
+        clearInterval(counter);
+		alert("Support has been alerted");
+    }
+  }, 1000);
+}
+$("#startClock").click(function(){
+    startTimer();
+ });
+
+ function ORG_timer_data() {
+  window.localStorage.setItem('timerdata', h2.textContent);
+}
+</script>
+</html>
